@@ -1,0 +1,41 @@
+<! doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <title>
+    Welcome!
+    </title>
+</head>
+<body>
+  <form action="/validate" method="post">
+    <br>
+    Username:
+    <br>
+    <input type="text" name="username" value="{{username}}">
+    <br>
+    {% if username_error|length != 0%}
+    <span class="error">{{username_error}}</span>
+    {% endif %}
+    Password:<br>
+    <input type="text" name="password">
+    <br>
+    {% if pass_error|length != 0%}
+    <span class="error">{{pass_error}}</span>
+    {% endif %}
+    Verify Password:<br>
+    <br>
+    <input type="text"name="verifypassword">
+    <br>
+    {% if pass_error|length != 0%}
+    <span class="error">{{pass_error}}</span>
+    {% endif %}
+    <br>
+    Email:<br>
+    <input type="text" name="email" value={{email}}>
+    {% if email_error|length != 0%}
+    <span class="error">{{email_error}}</span>
+    {% endif %}
+    <br>
+    <input type="submit" value="Confirm">
+    </form>
+  </body>
+</html>
